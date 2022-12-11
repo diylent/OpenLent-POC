@@ -1,223 +1,257 @@
-nutrientProfile = {
+const initSqlJS = require('sql.js')
+
+const SQL = await initSqlJs({
+    locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js`
+  });
+
+const recepieDB = new SQL
+
+// Boilerplate for nutrients
+let nutrientProfile = {
     macroNutrients: {
         calories: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
             unit: "kcal"
         },
         carbohydrates: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
             unit: "g"
         },
         protien: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
             unit: "g"
         },
-        // Total Fat must be calculate from the other Fat
         fats: {
             totalFat: {
-                ammount: 0,
+                quantity: 0,
                 max: 0,
                 unit: "g"
             },
             saturatedFat: {
-                ammount: 0,
+                quantity: 0,
                 max: 0,
                 unit: "g"
             },
             monounsaturatedFat: {
-                ammount: 0,
+                quantity: 0,
                 max: 0,
                 unit: "g"
             },
             polyunsaturatedFat: {
-                ammount: 0,
+                quantity: 0,
                 max: 0,
                 unit: "g"
             },
             omega3FattyAcids: {
-                ammount: 0,
+                quantity: 0,
                 max: 0,
                 unit: "g"
             },
             omega6FattyAcids: {
-                ammount: 0,
+                quantity: 0,
                 max: 0,
                 unit: "g"
             },    
         },
         fibers: {
             totalFiber: {
-                ammount: 0,
+                quantity: 0,
                 max: 0,
                 unit: "g"
             },
             solubleFiber: {
-                ammount: 0,
+                quantity: 0,
                 max: 0,
                 unit: "g"
             },
             insolubleFiber: {
-                ammount: 0,
+                quantity: 0,
                 max: 0,
                 unit: "g"
             },
         },
         cholestoral: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
             unit: "mg"
         },
     },
     vitamins: {
         A: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "IU",
+            unit: "IU",
         },
         B6: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "mg",
+            unit: "mg",
         },
         B12: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "ug",
+            unit: "ug",
         },
         C: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "mg",
+            unit: "mg",
         },
         D: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "IU",
+            unit: "IU",
         },
         E: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "IU",
+            unit: "IU",
         },
         K: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "ug",
+            unit: "ug",
         },
         thlamin: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "mg",
+            unit: "mg",
         },
         riboflavin: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "mg",
+            unit: "mg",
         },
         niacin: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "mg",
+            unit: "mg",
         },
         folate: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "mg",
+            unit: "mg",
         },
         pantothenicAcid: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "mg",
+            unit: "mg",
         },
         biotin: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "ug",
+            unit: "ug",
         },
         choline: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "mg",
+            unit: "mg",
         },
     },
     minerals: {
         calcium: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "g"
+            unit: "g"
         },
         chloride: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "g"
+            unit: "g"
         },
         chromium: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "mg"
+            unit: "mg"
         },
         copper: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "mg"
+            unit: "mg"
         },
         iodine: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "ug"
+            unit: "ug"
         },
         iron: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "mg"
+            unit: "mg"
         },
         magnesium: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "mg"
+            unit: "mg"
         },
         manganese: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "g"
+            unit: "g"
         },
         molybdenum: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "g"
+            unit: "g"
         },
         phosphorus: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "g"
+            unit: "g"
         },
         potassium: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "g"
+            unit: "g"
         },
         selenium: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "g"
+            unit: "g"
         },
         sodium: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "g"
+            unit: "g"
         },
         sulfur: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "g"
+            unit: "g"
         },
         zinc: {
-            ammount: 0,
+            quantity: 0,
             max: 0,
-            measurementUnit: "g"
+            unit: "g"
         },
     }
 }
+
+let recepie = {
+    1: {
+        name: "string",
+        quantity: {
+            amount: 0,
+            unit: "string"
+        },
+        form: "string",
+        source: {
+            displayName: "string",
+            link: "string"
+        },
+        containerSizeGrams: 0,
+        ingredientCost: 0,
+        costPerMeal: 0,
+        mealsAvailble: 0, 
+        // Import nutrient profile here
+    }
+}
+
+let makeMeal = (name) => {
+ 
+}
+
+let recepieDB = openDatabse()

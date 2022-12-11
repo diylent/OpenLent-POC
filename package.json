@@ -1,0 +1,12 @@
+{
+  "name": "OpenLent-POC",
+  "version": "0.0.0",
+  "description": "The proof of concept for OpenLent",
+  "main": "index.js",
+  "repository": "git@github.com:diylent/OpenLent-POC.git",
+  "author": "abe <abe@valle.us>",
+  "license": "The Unlicense",
+  "dependencies": {
+    "sql.js": "^1.8.0"
+  }
+}
